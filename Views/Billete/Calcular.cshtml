@@ -1,0 +1,35 @@
+﻿@model Laboratorio03_MVC_Farfan.Models.ClsBillete
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Calcular</title>
+</head>
+<body>
+    <div> 
+        <center><h1>Dispensador de Billetes</h1></center>
+        <br />
+         @using (Html.BeginForm("Calcular", "Billete", FormMethod.Post))
+            {
+             @Html.LabelFor(model => model.monto,"Total S/. ")
+             @Html.EditorFor(model => model.monto)
+             @Html.ValidationMessageFor(model => model.monto)
+             <p>
+                 <button>Calcular</button>
+
+             </p>
+             <div>
+                 <p><b>Billete de S/. 100 : </b> @Model.b100</p> <br />
+                 <p><b>Billete de S/. 50 : </b>@Model.b50 </p> <br />
+                 <p><b>Billete de S/. 20 : </b>@Model.b20</p>  <br />
+                 <p><b>Billete de S/. 10 : </b> @Model.b10</p>  <br />
+             </div>
+            }
+    </div>
+</body>
+</html>

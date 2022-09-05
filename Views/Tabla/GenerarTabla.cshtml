@@ -1,0 +1,25 @@
+﻿@model Laboratorio03_MVC_Farfan.Models.ClsTabla
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GenerarTabla</title>
+</head>
+<body>
+    <div>
+        <center><h1>Tabla de Multiplicar del <b> @Model.numero </b></h1></center>
+        <br />
+        @for (int i=0; i<=12; i++)
+        {
+            var m = 0;
+            m = Convert.ToInt32(Model.numero * i);
+            <div> @Model.numero x @i = @m </div>
+        }
+    </div>
+</body>
+</html>
